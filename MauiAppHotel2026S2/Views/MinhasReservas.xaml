@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel2026S2.Views.MinhasReservas"
+             BackgroundColor="#0d1b2a"
+             Title="Minhas Reservas">
+
+    <VerticalStackLayout Padding="10">
+
+        <Label Text="Minhas Reservas"
+               FontSize="36"
+               TextColor="#ffb703"
+               Margin="0, 30, 0, 20" />
+
+        <CollectionView x:Name="cv_reservas">
+
+            <CollectionView.EmptyView>
+                <Label Text="Nenhuma reserva confirmada ainda."
+                       TextColor="White"
+                       HorizontalOptions="Center" />
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeShape="RoundRectangle 10"
+                            BackgroundColor="#1b263b"
+                            Padding="15"
+                            Margin="0, 5">
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="{Binding Quarto}" FontSize="22" TextColor="#ffb703" />
+                            <Label Text="{Binding CheckIn, StringFormat='Check-in: {0:dd/MM/yyyy}'}" TextColor="White" />
+                            <Label Text="{Binding CheckOut, StringFormat='Check-out: {0:dd/MM/yyyy}'}" TextColor="White" />
+                            <Label Text="{Binding ValorTotal, StringFormat='Total: R$ {0:N2}'}" TextColor="#e07a5f" FontSize="18" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

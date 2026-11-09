@@ -2,11 +2,18 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel2026S2.Views.ContratacaoHospedagem"
+             BackgroundColor="#0d1b2a"
              Title="Hotel">
 
     <ContentPage.Resources>
         <Style TargetType="Label">
             <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#e07a5f" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="10" />
         </Style>
     </ContentPage.Resources>
 
@@ -15,11 +22,13 @@
 
             <Label Text="Cálculo da Diária"
                    FontSize="40"
-                   Margin="0, 50, 0, 50" />
+                   TextColor="#ffb703"
+                   Margin="0, 40, 0, 40" />
 
             <Border StrokeShape="RoundRectangle 10"
-                    BackgroundColor="{StaticResource Gray600}">
+                    BackgroundColor="#1b263b">
                 <VerticalStackLayout Padding="10">
+
                     <Grid ColumnDefinitions="*, *, *"
                           RowDefinitions="Auto, Auto">
 
@@ -35,38 +44,62 @@
                                  Minimum="0" Maximum="10" Increment="1"
                                  ValueChanged="Criancas_ValueChanged" />
                     </Grid>
+
+                    <Label Text="Escolha sua Suíte"
+                           FontSize="18"
+                           TextColor="#ffb703"
+                           Margin="0, 15, 0, 0" />
+                    <Label Text="Selecione sua Acomodação" />
+
+                    <Picker x:Name="pck_quarto"
+                            Title="Escolha o quarto"
+                            TextColor="White"
+                            TitleColor="#9aa5b1" />
+
                 </VerticalStackLayout>
             </Border>
 
-            <Label Text="Selecione sua Acomodação:"
-                   HorizontalOptions="Center"
-                   Margin="0, 20, 0, 5" />
-
-            <Picker x:Name="pck_quarto" Title="Escolha o quarto" />
-
             <Border StrokeShape="RoundRectangle 10"
-                    BackgroundColor="{StaticResource Gray600}"
+                    BackgroundColor="#1b263b"
                     Margin="0, 20, 0, 0">
-                <Grid Padding="10"
-                      ColumnDefinitions="*, *"
-                      RowDefinitions="Auto, Auto"
-                      RowSpacing="10">
+                <VerticalStackLayout Padding="10" Spacing="10">
 
-                    <Label Grid.Row="0" Grid.Column="0" Text="Data Check-in:" />
-                    <DatePicker x:Name="dtp_checkin" Grid.Row="0" Grid.Column="1" Format="dd/MM/yyyy" />
+                    <Label Text="Período da Estadia"
+                           FontSize="18"
+                           TextColor="#ffb703" />
 
-                    <Label Grid.Row="1" Grid.Column="0" Text="Data Check-out:" />
-                    <DatePicker x:Name="dtp_checkout" Grid.Row="1" Grid.Column="1" Format="dd/MM/yyyy" />
-                </Grid>
+                    <Grid ColumnDefinitions="*, *"
+                          RowDefinitions="Auto, Auto"
+                          RowSpacing="10">
+
+                        <Label Grid.Row="0" Grid.Column="0" Text="Check-in:" />
+                        <DatePicker x:Name="dtpck_checkin" Grid.Row="0" Grid.Column="1"
+                                    Format="dd/MM/yyyy"
+                                    TextColor="White"
+                                    DateSelected="dtpck_checkin_DateSelected" />
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Check-out:" />
+                        <DatePicker x:Name="dtpck_checkout" Grid.Row="1" Grid.Column="1"
+                                    Format="dd/MM/yyyy"
+                                    TextColor="White" />
+                    </Grid>
+
+                </VerticalStackLayout>
             </Border>
 
-            <Button Text="Calcular!"
-                    Clicked="Calcular_Clicked"
+            <Button Text="Avançar"
+                    Clicked="Avancar_Clicked"
                     Margin="0, 20, 0, 0" />
+
+            <Button Text="Minhas Reservas"
+                    Clicked="Reservas_Clicked"
+                    BackgroundColor="#415a77"
+                    Margin="0, 10, 0, 0" />
 
             <Button Text="Sobre"
                     Clicked="Sobre_Clicked"
-                    Margin="0, 10, 0, 0" />
+                    BackgroundColor="#415a77"
+                    Margin="0, 10, 0, 20" />
 
         </VerticalStackLayout>
     </ScrollView>

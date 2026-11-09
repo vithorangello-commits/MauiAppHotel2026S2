@@ -2,22 +2,24 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel2026S2.Views.Sobre"
+             BackgroundColor="#0d1b2a"
              Title="Sobre">
 
     <VerticalStackLayout Padding="10" VerticalOptions="Center">
 
         <Label Text="Sobre o App"
                FontSize="40"
-               Margin="0, 50, 0, 50" />
+               TextColor="#ffb703"
+               Margin="0, 40, 0, 40" />
 
         <Border StrokeShape="RoundRectangle 10"
-                BackgroundColor="{StaticResource Gray600}">
+                BackgroundColor="#1b263b">
             <VerticalStackLayout Padding="15" Spacing="10">
-                <Label Text="App: Hotel - Cálculo da Diária" />
-                <Label Text="Desenvolvedor: SEU NOME AQUI" />
-                <Label Text="Ano de desenvolvimento: 2026" />
-                <Label Text="Curso Técnico - Etec" />
-                <Label Text="Versão: 1.0" />
+                <Label TextColor="White" Text="App: Hotel - Cálculo da Diária" />
+                <Label TextColor="White" Text="Desenvolvedor: Vithor Angello" />
+                <Label TextColor="White" Text="Ano de desenvolvimento: 2026" />
+                <Label TextColor="White" Text="Curso Técnico - Etec" />
+                <Label TextColor="White" Text="Versão: 2.0" />
             </VerticalStackLayout>
         </Border>
 
