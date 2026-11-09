@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MauiAppHotel2026S2/MauiAppHotel2026S2.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>

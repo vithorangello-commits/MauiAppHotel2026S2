@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel2026S2.Views.ContratacaoHospedagem"
+             Title="Hotel">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" VerticalOptions="Center">
+
+            <Label Text="Cálculo da Diária"
+                   FontSize="40"
+                   Margin="0, 50, 0, 50" />
+
+            <Border StrokeShape="RoundRectangle 10"
+                    BackgroundColor="{StaticResource Gray600}">
+                <VerticalStackLayout Padding="10">
+                    <Grid ColumnDefinitions="*, *, *"
+                          RowDefinitions="Auto, Auto">
+
+                        <Label Grid.Row="0" Grid.Column="0" Text="Adultos:" />
+                        <Label x:Name="lbl_adultos" Grid.Row="0" Grid.Column="1" Text="0" />
+                        <Stepper x:Name="stp_adultos" Grid.Row="0" Grid.Column="2"
+                                 Minimum="0" Maximum="10" Increment="1"
+                                 ValueChanged="Adultos_ValueChanged" />
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Crianças:" />
+                        <Label x:Name="lbl_criancas" Grid.Row="1" Grid.Column="1" Text="0" />
+                        <Stepper x:Name="stp_criancas" Grid.Row="1" Grid.Column="2"
+                                 Minimum="0" Maximum="10" Increment="1"
+                                 ValueChanged="Criancas_ValueChanged" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="Selecione sua Acomodação:"
+                   HorizontalOptions="Center"
+                   Margin="0, 20, 0, 5" />
+
+            <Picker x:Name="pck_quarto" Title="Escolha o quarto" />
+
+            <Border StrokeShape="RoundRectangle 10"
+                    BackgroundColor="{StaticResource Gray600}"
+                    Margin="0, 20, 0, 0">
+                <Grid Padding="10"
+                      ColumnDefinitions="*, *"
+                      RowDefinitions="Auto, Auto"
+                      RowSpacing="10">
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Data Check-in:" />
+                    <DatePicker x:Name="dtp_checkin" Grid.Row="0" Grid.Column="1" Format="dd/MM/yyyy" />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Data Check-out:" />
+                    <DatePicker x:Name="dtp_checkout" Grid.Row="1" Grid.Column="1" Format="dd/MM/yyyy" />
+                </Grid>
+            </Border>
+
+            <Button Text="Calcular!"
+                    Clicked="Calcular_Clicked"
+                    Margin="0, 20, 0, 0" />
+
+            <Button Text="Sobre"
+                    Clicked="Sobre_Clicked"
+                    Margin="0, 10, 0, 0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel2026S2.Views.Resumo"
+             Title="Resumo">
+
+    <VerticalStackLayout Padding="10" VerticalOptions="Center">
+
+        <Label Text="Resumo da Reserva"
+               FontSize="40"
+               Margin="0, 50, 0, 50" />
+
+        <Border StrokeShape="RoundRectangle 10"
+                BackgroundColor="{StaticResource Gray600}">
+            <VerticalStackLayout Padding="15" Spacing="10">
+                <Label Text="{Binding Quarto, StringFormat='Acomodação: {0}'}" />
+                <Label Text="{Binding CheckIn, StringFormat='Check-in: {0:dd/MM/yyyy}'}" />
+                <Label Text="{Binding CheckOut, StringFormat='Check-out: {0:dd/MM/yyyy}'}" />
+                <Label Text="{Binding Noites, StringFormat='Noites: {0}'}" />
+                <Label Text="{Binding Adultos, StringFormat='Adultos: {0}'}" />
+                <Label Text="{Binding Criancas, StringFormat='Crianças: {0}'}" />
+                <Label Text="{Binding ValorDiaria, StringFormat='Valor da diária: R$ {0:N2}'}" />
+                <Label Text="{Binding ValorTotal, StringFormat='Total: R$ {0:N2}'}"
+                       FontSize="24" />
+            </VerticalStackLayout>
+        </Border>
+
+    </VerticalStackLayout>
+</ContentPage>
