@@ -17,7 +17,7 @@
             <VerticalStackLayout Padding="15" Spacing="10">
                 <Label TextColor="White" Text="App: Hotel - Cálculo da Diária" />
                 <Label TextColor="White" Text="Desenvolvedor: Vithor Angello" />
-                <Label TextColor="White" Text="Ano de desenvolvimento: 2026" />
+                <Label TextColor="White" Text="Ano de Desenvolvimento: 2026" />
                 <Label TextColor="White" Text="Curso Técnico - Etec" />
                 <Label TextColor="White" Text="Versão: 2.0" />
             </VerticalStackLayout>
